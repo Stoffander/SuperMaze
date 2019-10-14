@@ -5,19 +5,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LandingScreenController">
+<AnchorPane prefHeight="386.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LandingScreenController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="400.0">
+      <VBox maxHeight="-Infinity" prefHeight="386.0" prefWidth="599.0">
          <children>
             <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Welcome to SuperMaze">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="lbPlayGame" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" maxWidth="1.7976931348623157E308" onMouseClicked="#playGame" prefHeight="60.0" prefWidth="100.0" text="Play Game" textAlignment="CENTER" />
-            <Label fx:id="lbCreateMaze" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" onMouseClicked="#createMaze" text="Create Maze" textAlignment="CENTER" />
-            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Options" textAlignment="CENTER" />
-            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Exit" textAlignment="CENTER" />
+            <Label fx:id="lbPlayGame" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" maxWidth="1.7976931348623157E308" onMouseClicked="#playGame" prefHeight="60.0" prefWidth="100.0" text="Play Game" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label fx:id="lbCreateMaze" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" onMouseClicked="#createMaze" text="Create Maze" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Options" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefWidth="100.0" text="Exit" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
          </children>
       </VBox>
    </children>
