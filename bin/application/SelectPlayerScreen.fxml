@@ -17,7 +17,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelectPlayerScreenController">
+<VBox onKeyPressed="#Player1KeyCmd" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SelectPlayerScreenController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -66,19 +66,24 @@
                         <Label alignment="CENTER" text="Player 1" textAlignment="CENTER" BorderPane.alignment="CENTER" />
                      </top>
                      <center>
-                        <ImageView fitHeight="279.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                        <ImageView fx:id="imgViewP1" fitHeight="279.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                            <image>
                               <Image url="@../../img/CatWoman.png" />
                            </image>
                         </ImageView>
                      </center>
                      <left>
-                        <Button fx:id="btnCharacterLeft" mnemonicParsing="false" text="&lt;" BorderPane.alignment="CENTER" />
+                        <Button mnemonicParsing="false" text="&lt;" BorderPane.alignment="CENTER" />
                      </left>
                      <right>
                         <Button mnemonicParsing="false" text="&gt;" BorderPane.alignment="CENTER" />
                      </right>
                   </BorderPane>
+                  <Label fx:id="player1Ready" alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.0" prefHeight="543.0" prefWidth="471.0" text="Ready!!!" textAlignment="CENTER" textFill="#dd1111">
+                     <font>
+                        <Font name="System Bold" size="57.0" />
+                     </font>
+                  </Label>
           </children>
         </AnchorPane>
             <AnchorPane prefHeight="543.0" prefWidth="510.0">
@@ -91,7 +96,7 @@
                         <Label alignment="CENTER" text="Player 2" textAlignment="CENTER" BorderPane.alignment="CENTER" />
                      </top>
                      <center>
-                        <ImageView fitHeight="279.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                        <ImageView fx:id="imgViewP2" fitHeight="279.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                            <image>
                               <Image url="@../../img/Superman.png" />
                            </image>
@@ -104,6 +109,11 @@
                         <Button mnemonicParsing="false" text="&gt;" BorderPane.alignment="CENTER" />
                      </right>
                   </BorderPane>
+                  <Label fx:id="player2Ready" alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.0" prefHeight="543.0" prefWidth="471.0" text="Ready!!!" textAlignment="CENTER" textFill="#dd1111">
+                     <font>
+                        <Font name="System Bold" size="57.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
       </items>
