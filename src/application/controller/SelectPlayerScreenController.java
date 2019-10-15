@@ -13,7 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Path;
 import javafx.stage.Stage;
 
 public class SelectPlayerScreenController {
@@ -28,13 +27,17 @@ public class SelectPlayerScreenController {
 	@FXML Label player2Ready;
 	
 	@FXML VBox scene;
+	
+	@FXML Label namePlayer1;
+	
+	@FXML Label namePlayer2;
 
 	Image img1 = new Image("file:img/CatWoman.png");
 	Image img2 = new Image("file:img/Superman.png");
 	Image img3 = new Image("file:img/batman.png");
 	
 	//counter for the image list for each player
-    private int a = 0;
+    private int a = 1;
     private int b = 0;
     
     boolean p1Ready = false;
@@ -49,7 +52,11 @@ public class SelectPlayerScreenController {
 		imgList.add(img1);
 		imgList.add(img2);	
 		imgList.add(img3);
-		
+
+		ArrayList<String> namesList = new ArrayList<String>();
+		namesList.add("Cat Woman");
+		namesList.add("Superman");	
+		namesList.add("Batman");
 		
 			//Player1 commands
 		    if (event.getCode().equals(KeyCode.A)) {
@@ -58,6 +65,7 @@ public class SelectPlayerScreenController {
 		    	if (a >= imgList.size()) 
 		    		{a=0;}   	
 		    	imgViewP1.setImage(imgList.get(a));
+		    	namePlayer1.setText(namesList.get(a));
 		    		    	
 		    }
 		    else if (event.getCode().equals(KeyCode.D)) {
@@ -67,7 +75,8 @@ public class SelectPlayerScreenController {
 		    	else
 			    	{a--;}
 
-		    	imgViewP1.setImage(imgList.get(a));	    	
+		    	imgViewP1.setImage(imgList.get(a));	  
+		    	namePlayer1.setText(namesList.get(a));
 		    }
 		    else if (event.getCode().equals(KeyCode.SPACE)) {
 		    	System.out.println("Space pressed");
@@ -77,7 +86,7 @@ public class SelectPlayerScreenController {
 		    	
 		    	if (p2Ready == true)
 		    	{
-		    		Parent newParent = FXMLLoader.load(getClass().getResource("CreateMaze.fxml"));
+		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/CreateMaze.fxml"));
 		    		Stage stage = (Stage) scene.getScene().getWindow();
 		    		Scene scene = new Scene(newParent);
 		    		stage.setScene(scene);		
@@ -91,6 +100,7 @@ public class SelectPlayerScreenController {
 		    	if (b >= imgList.size()) 
 		    		{b=0;}   	
 		    	imgViewP2.setImage(imgList.get(b));
+		    	namePlayer2.setText(namesList.get(b));
 		    }
 		    else if (event.getCode().equals(KeyCode.RIGHT)) {
 		    	System.out.println("Rightarrow presser");
@@ -101,6 +111,7 @@ public class SelectPlayerScreenController {
 			    	{b--;}
 
 		    	imgViewP2.setImage(imgList.get(b));
+		    	namePlayer2.setText(namesList.get(b));
 		    	
 		    }
 		    else if (event.getCode().equals(KeyCode.ENTER)) {
@@ -111,7 +122,7 @@ public class SelectPlayerScreenController {
 		    	
 		    	if (p1Ready == true)
 		    	{
-		    		Parent newParent = FXMLLoader.load(getClass().getResource("CreateMaze.fxml"));
+		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/CreateMaze.fxml"));
 		    		Stage stage = (Stage) scene.getScene().getWindow();
 		    		Scene scene = new Scene(newParent);
 		    		stage.setScene(scene);		

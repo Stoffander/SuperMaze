@@ -1,4 +1,4 @@
-package application;
+package application.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,7 @@ public class LandingScreenController {
 	@FXML
 	private void playGame() throws Exception
 	{
-		Parent newParent = FXMLLoader.load(getClass().getResource("SelectPlayerScreen.fxml"));
+		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/SelectPlayerScreen.fxml"));
 		Stage stage = (Stage) lbPlayGame.getScene().getWindow();
 		Scene scene = new Scene(newParent);
 		stage.setScene(scene);		
@@ -28,7 +28,7 @@ public class LandingScreenController {
 	@FXML
 	private void createMaze() throws Exception
 	{
-		Parent newParent = FXMLLoader.load(getClass().getResource("CreateMaze.fxml"));
+		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/CreateMaze.fxml"));
 		Stage stage = (Stage) lbPlayGame.getScene().getWindow();
 		Scene scene = new Scene(newParent);
 		stage.setScene(scene);		

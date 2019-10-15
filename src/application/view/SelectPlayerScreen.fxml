@@ -59,16 +59,13 @@
         <AnchorPane prefHeight="543.0" prefWidth="510.0">
           <children>
                   <BorderPane layoutY="-1.0" prefHeight="544.0" prefWidth="471.0">
-                     <bottom>
-                        <Label prefHeight="72.0" prefWidth="330.0" text="Please Select your Character using A and D. Confirm by pressing Space" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER" />
-                     </bottom>
                      <top>
                         <Label alignment="CENTER" text="Player 1" textAlignment="CENTER" BorderPane.alignment="CENTER" />
                      </top>
                      <center>
                         <ImageView fx:id="imgViewP1" fitHeight="279.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                            <image>
-                              <Image url="@../../img/CatWoman.png" />
+                              <Image url="@../../../img/batman.png" />
                            </image>
                         </ImageView>
                      </center>
@@ -78,6 +75,23 @@
                      <right>
                         <Button mnemonicParsing="false" text="&gt;" BorderPane.alignment="CENTER" />
                      </right>
+                     <bottom>
+                        <VBox prefHeight="136.0" prefWidth="471.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label fx:id="namePlayer1" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Batman" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Please Select your Character using A and D." textAlignment="CENTER" wrapText="true">
+                                 <padding>
+                                    <Insets top="50.0" />
+                                 </padding>
+                              </Label>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text=" Confirm you Selection by pressing Space" />
+                           </children>
+                        </VBox>
+                     </bottom>
                   </BorderPane>
                   <Label fx:id="player1Ready" alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.0" prefHeight="543.0" prefWidth="471.0" text="Ready!!!" textAlignment="CENTER" textFill="#dd1111">
                      <font>
@@ -89,16 +103,13 @@
             <AnchorPane prefHeight="543.0" prefWidth="510.0">
                <children>
                   <BorderPane layoutY="-1.0" prefHeight="544.0" prefWidth="471.0">
-                     <bottom>
-                        <Label prefHeight="72.0" prefWidth="330.0" text="Please Select your Character using &lt;-and -&gt;. Confirm by pressing Enter" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER" />
-                     </bottom>
                      <top>
                         <Label alignment="CENTER" text="Player 2" textAlignment="CENTER" BorderPane.alignment="CENTER" />
                      </top>
                      <center>
                         <ImageView fx:id="imgViewP2" fitHeight="279.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                            <image>
-                              <Image url="@../../img/Superman.png" />
+                              <Image url="@../../../img/Superman.png" />
                            </image>
                         </ImageView>
                      </center>
@@ -108,6 +119,23 @@
                      <right>
                         <Button mnemonicParsing="false" text="&gt;" BorderPane.alignment="CENTER" />
                      </right>
+                     <bottom>
+                        <VBox prefHeight="136.0" prefWidth="471.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label fx:id="namePlayer2" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Superman" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Please Select your Character using Left and Right arrows." textAlignment="CENTER" wrapText="true">
+                                 <padding>
+                                    <Insets top="50.0" />
+                                 </padding>
+                              </Label>
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text=" Confirm you Selection by pressing Space" />
+                           </children>
+                        </VBox>
+                     </bottom>
                   </BorderPane>
                   <Label fx:id="player2Ready" alignment="TOP_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.0" prefHeight="543.0" prefWidth="471.0" text="Ready!!!" textAlignment="CENTER" textFill="#dd1111">
                      <font>
