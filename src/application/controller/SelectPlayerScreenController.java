@@ -86,7 +86,7 @@ public class SelectPlayerScreenController {
 		    	
 		    	if (p2Ready == true)
 		    	{
-		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/CreateMaze.fxml"));
+		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
 		    		Stage stage = (Stage) scene.getScene().getWindow();
 		    		Scene scene = new Scene(newParent);
 		    		stage.setScene(scene);		
@@ -122,7 +122,7 @@ public class SelectPlayerScreenController {
 		    	
 		    	if (p1Ready == true)
 		    	{
-		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/CreateMaze.fxml"));
+		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
 		    		Stage stage = (Stage) scene.getScene().getWindow();
 		    		Scene scene = new Scene(newParent);
 		    		stage.setScene(scene);		
