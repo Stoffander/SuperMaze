@@ -17,6 +17,7 @@ public class Main extends Application {
 			primaryStage.setTitle("SuperMaze");
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			System.out.println("test");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
