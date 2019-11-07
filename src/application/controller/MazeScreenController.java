@@ -1,7 +1,10 @@
 package application.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 
 import application.controller.Cell;
 import application.controller.Player;
@@ -12,9 +15,16 @@ import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
+
+import application.model.Players;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+
 import javafx.geometry.Insets;
+
+import javafx.fxml.Initializable;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -33,8 +43,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class MazeScreenController {
+public abstract class MazeScreenController implements Initializable {
 	
+
 
 	
 	
@@ -461,4 +472,10 @@ public class MazeScreenController {
 		        	 
 		             
 		        });
-		 }}}
+		 
+	
+	
+
+
+}}}
+
