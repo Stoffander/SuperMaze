@@ -3,6 +3,7 @@ package application.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import application.model.Player1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,7 +43,6 @@ public class SelectPlayerScreenController {
     
     boolean p1Ready = false;
     boolean p2Ready = false;
-	
 	
 	@FXML
 	private void Player1KeyCmd(KeyEvent event) throws IOException
