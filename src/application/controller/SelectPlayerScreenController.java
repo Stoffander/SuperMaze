@@ -1,11 +1,14 @@
 package application.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-import application.model.Player1;
+import application.model.Players;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -16,8 +19,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class SelectPlayerScreenController {
-	
+public class SelectPlayerScreenController implements Initializable {
+		
 	//initialise fxml components
 	@FXML ImageView imgViewP2;
 	
@@ -32,21 +35,34 @@ public class SelectPlayerScreenController {
 	@FXML Label namePlayer1;
 	
 	@FXML Label namePlayer2;
-
+	
+	// initialise model
+	
+	Players p = new Players();
+	   
+	//initialise images
 	Image img1 = new Image("file:img/CatWoman.png");
 	Image img2 = new Image("file:img/Superman.png");
 	Image img3 = new Image("file:img/batman.png");
 	
 	//counter for the image list for each player
-    private int a = 1;
-    private int b = 0;
+    private int a = 0;
+    private int b = -1;
     
     boolean p1Ready = false;
     boolean p2Ready = false;
-	
+    
+
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+	}
+    
 	@FXML
 	private void Player1KeyCmd(KeyEvent event) throws IOException
 	{
+		
 		//add images to a list
 		ArrayList<Image> imgList = new ArrayList<Image>();
 		imgList.add(img1);
@@ -66,6 +82,7 @@ public class SelectPlayerScreenController {
 		    		{a=0;}   	
 		    	imgViewP1.setImage(imgList.get(a));
 		    	namePlayer1.setText(namesList.get(a));
+		    	
 		    		    	
 		    }
 		    else if (event.getCode().equals(KeyCode.D)) {
@@ -85,7 +102,7 @@ public class SelectPlayerScreenController {
 		    	p1Ready = true;
 		    	
 		    	if (p2Ready == true)
-		    	{
+		    	{	    		
 		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
 		    		Stage stage = (Stage) scene.getScene().getWindow();
 		    		Scene scene = new Scene(newParent);
@@ -122,6 +139,9 @@ public class SelectPlayerScreenController {
 		    	
 		    	if (p1Ready == true)
 		    	{
+		    		p.setPlayer1Image(imgViewP2.getImage());
+		    		p.setPlayer2Image(imgViewP2.getImage());
+		    		
 		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
 		    		Stage stage = (Stage) scene.getScene().getWindow();
 		    		Scene scene = new Scene(newParent);
@@ -129,8 +149,6 @@ public class SelectPlayerScreenController {
 		    	}
 		    }
 	}
-	
-
 	
 
 }

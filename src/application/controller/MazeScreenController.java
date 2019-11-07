@@ -1,10 +1,14 @@
 package application.controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
+import application.model.Players;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -15,7 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class MazeScreenController {
+public class MazeScreenController implements Initializable {
 	
 	//initialise fxml components
 	@FXML ImageView imgViewP2;
@@ -52,5 +56,15 @@ public class MazeScreenController {
 			imgViewP2.setTranslateY( imgViewP2.getTranslateY() + 10);
 			break;	
 	}
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		Players p = new Players();
+		p.getPlayer1Image();
+		p.getPlayer2Image();
+		
+		imgViewP1.setImage(p.getPlayer1Image());
+		imgViewP2.setImage(p.getPlayer1Image());
 	}
 }
