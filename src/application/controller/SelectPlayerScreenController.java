@@ -110,6 +110,8 @@ public class SelectPlayerScreenController implements Initializable {
 
 
 		    	{
+		    		p.setPlayer1Image(imgViewP1.getImage());
+		    		p.setPlayer2Image(imgViewP2.getImage());
 		    		
 		    		Maze root = new Maze();
 		    		root.setupMaze();
@@ -154,6 +156,9 @@ public class SelectPlayerScreenController implements Initializable {
 		    	
 		    	if (p1Ready == true)
 		    	{
+
+		    		p.setPlayer1Image(imgViewP1.getImage());
+		    		p.setPlayer2Image(imgViewP2.getImage());
 
 		    		Maze root = new Maze();
 		    		root.setupMaze();

@@ -3,6 +3,7 @@ package application.controller;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import application.model.Players;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -29,16 +30,20 @@ public class Player2 extends Circle
 		this.x =5; 
 		this.y =5; 
 		
-		String path = "./img/batman.png"; // relative path
-	    Image image = null;
-		try {
-			image = new Image(new FileInputStream(path));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		ImagePattern imageView = new ImagePattern(image);   
-        
+//		String path = "./img/batman.png"; // relative path
+//		Image image = null;
+//		try {
+//			image = new Image(new FileInputStream(path));
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} 
+		Players p = new Players();
+
+		
+		ImagePattern imageView = new ImagePattern(p.getPlayer2Image());   
+  
+		
         this.setFill(imageView);
         
         

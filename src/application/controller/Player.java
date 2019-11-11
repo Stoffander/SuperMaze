@@ -1,14 +1,23 @@
 package application.controller;
 
 import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
 
+import application.model.Players;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+
+/*
+ *The players are shapes capable of moving around the grid. 
+ *An image related to the player profile is attached to the shape .
+ * 
+ * 
+ * */
 
 public class Player extends Circle
 {
@@ -23,23 +32,24 @@ public class Player extends Circle
 		y = 15;
 		
 		this.setRadius(15);
-		//this.setCenterX(15);
-		//this.setCenterY(15);
-		//this.setFill(Color.RED);
 		this.x =10; 
 		this.y =10; 
 		
-		String path = "./img/Superman.png"; // relative path
+//		String path = "./img/Superman.png"; // relative path
 		
 		
-	    Image image = null;
-		try {
-			image = new Image(new FileInputStream(path));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		ImagePattern imageView = new ImagePattern(image);   
+//	    Image image = null;
+//		try {
+//			image = new Image(new FileInputStream(path));
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} 
+////		
+		Players p = new Players();
+//		image = p.getPlayer1Image();
+
+		ImagePattern imageView = new ImagePattern(p.getPlayer1Image());   
         
         this.setFill(imageView);
         
