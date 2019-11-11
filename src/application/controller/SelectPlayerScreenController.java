@@ -8,7 +8,11 @@ import java.util.ResourceBundle;
 import application.model.Players;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+
+import javafx.scene.Node;
+
 import javafx.fxml.Initializable;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -16,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -102,11 +107,23 @@ public class SelectPlayerScreenController implements Initializable {
 		    	p1Ready = true;
 		    	
 		    	if (p2Ready == true)
-		    	{	    		
-		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
-		    		Stage stage = (Stage) scene.getScene().getWindow();
-		    		Scene scene = new Scene(newParent);
-		    		stage.setScene(scene);		
+
+
+		    	{
+		    		p.setPlayer1Image(imgViewP1.getImage());
+		    		p.setPlayer2Image(imgViewP2.getImage());
+		    		
+		    		Maze root = new Maze();
+		    		root.setupMaze();
+		    		
+//		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
+//		    	
+//		    		
+//		    		Stage stage = (Stage) scene.getScene().getWindow();
+		    		//Scene scene = new Scene();
+//		    		stage.setScene(scene);		
+
+
 		    	}
 		    }
 		    
@@ -139,13 +156,25 @@ public class SelectPlayerScreenController implements Initializable {
 		    	
 		    	if (p1Ready == true)
 		    	{
-		    		p.setPlayer1Image(imgViewP2.getImage());
+
+		    		p.setPlayer1Image(imgViewP1.getImage());
 		    		p.setPlayer2Image(imgViewP2.getImage());
+
+		    		Maze root = new Maze();
+		    		root.setupMaze();
 		    		
-		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
-		    		Stage stage = (Stage) scene.getScene().getWindow();
-		    		Scene scene = new Scene(newParent);
-		    		stage.setScene(scene);		
+		    		
+//		    		Scene scene = new Scene(root);
+		    		
+
+		    		
+		    		
+//		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
+//		    		Stage stage = (Stage) scene.getScene().getWindow();
+//		    		Scene scene = new Scene(newParent);
+//		    		stage.setScene(scene);		
+
+
 		    	}
 		    }
 	}
