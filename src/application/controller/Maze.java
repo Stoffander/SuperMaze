@@ -36,7 +36,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /*
- * This has a BorderPane as the Main pane. 
+ * This scene has a BorderPane as the Main pane. 
  * On the center of the BorderPane there is a Grid Pane (21x21).
  * Additionally a two dimensional array called Cell1 created in order to access a specific 
  * position of the grid and transforming them to "wall". 
@@ -54,12 +54,12 @@ public class Maze extends Stage {
 	Label labelP1 = new Label("BATMAN LIFE: 100");
 	Label labelP2 = new Label("SUPERMAN LIFE: 100");
 
-	// create circle/movement properties
+	
 	double increment = 25.0;
-	// create Rectangle properties
+
 	double Rwidth = 80;
 	double Rheight = 20;
-	// create player and objects
+
 	Player player = new Player();// superman
 	Player2 player2 = new Player2();// batman
 	int Playerlife1 = 100;
@@ -97,25 +97,25 @@ public class Maze extends Stage {
 			for (int j = 0; j < rows; j++) {
 
 				if (i == 0) {
-					cell = new Cell(true, false);
+					cell = new Cell(true);
 					grid.add(cell, i, j);
 					mazegrid[i][j] = cell;
 				}
 
 				else if (j == 0) {
-					cell = new Cell(true, false);
+					cell = new Cell(true);
 					grid.add(cell, i, j);
 					mazegrid[i][j] = cell;
 				}
 
 				else if (j == 20) {
-					cell = new Cell(true, false);
+					cell = new Cell(true);
 					grid.add(cell, i, j);
 					mazegrid[i][j] = cell;
 				}
 
 				else if (i == 20) {
-					cell = new Cell(true, false);
+					cell = new Cell(true);
 					grid.add(cell, i, j);
 					mazegrid[i][j] = cell;
 				} else {
@@ -184,17 +184,10 @@ public class Maze extends Stage {
 	    
 		hBox.getChildren().addAll(labelP1, labelP2);
 		hBox.setSpacing(500);
-	   // labelP2.setAlignment(Pos.TOP_RIGHT);
 
-		
-		// Scene scene = new Scene(grid, (columns * 40) + 100, (rows * 40) + 100,
-		// Color.WHITE);
 		Scene scene = new Scene(mainPane, Color.WHITE);
 
-		// grid.getChildren().add(player);
 		moveCircleOnKeyPress(scene);
-
-		// r1.setFill(Color.GREEN);
 
 		scene.getStylesheets().add(getClass().getResource("game.css").toExternalForm());
 		this.setScene(scene);
@@ -210,7 +203,6 @@ public class Maze extends Stage {
 	 * */
 
 	private void moveCircleOnKeyPress(Scene scene) {
-		{// player movement
 			scene.setOnKeyPressed((KeyEvent event) -> {
 
 				switch (event.getCode()) {
@@ -300,7 +292,6 @@ public class Maze extends Stage {
 					st.setToX(0);
 					st.setToY(0);
 
-					
 					st.play();
 					el1.setFill(Color.GRAY);
 					el1.setStroke(Color.YELLOW);
@@ -333,8 +324,6 @@ public class Maze extends Stage {
 
 						System.out.println(Playerlife2);
 					}
-
-					// mazegrid[player2.getX()][player2.getY()].setBottom(el1);
 
 					break;
 				case SHIFT:
@@ -399,14 +388,9 @@ public class Maze extends Stage {
                	 
                 case P:
                	 
-               	 
-               	 
-                  	
+       	
                   	 if(Playerlife2 <70 ){mazegrid[player.getX()][player.getY()].setWall(false);}
-                  	 
-                  	 
-                  	
-                  	 
+ 	 
                   	 else  {mazegrid[player.getX()][player.getY()].setWall(true);}
                   	 
                	 
@@ -488,4 +472,3 @@ public class Maze extends Stage {
 
 	}
 
-}
