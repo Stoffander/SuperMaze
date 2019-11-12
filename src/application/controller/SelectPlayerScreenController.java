@@ -1,11 +1,14 @@
 package application.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import application.model.Players;
+import application.controller.Maze;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -22,10 +25,15 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class SelectPlayerScreenController implements Initializable {
-		
+	
+
+
+	
 	//initialise fxml components
 	@FXML ImageView imgViewP2;
 	
@@ -52,7 +60,7 @@ public class SelectPlayerScreenController implements Initializable {
 	
 	//counter for the image list for each player
     private int a = 0;
-    private int b = -1;
+    private int b = 1;
     
     boolean p1Ready = false;
     boolean p2Ready = false;
@@ -106,24 +114,20 @@ public class SelectPlayerScreenController implements Initializable {
 		    	imgViewP1.setOpacity(0.6);
 		    	p1Ready = true;
 		    	
+		    	//both players ready, call new scene
 		    	if (p2Ready == true)
 
 
 		    	{
+		    		//update model
 		    		p.setPlayer1Image(imgViewP1.getImage());
 		    		p.setPlayer2Image(imgViewP2.getImage());
 		    		
+		    		p.setPlayer1Name(namePlayer1.getText());
+		    		p.setPlayer2Name(namePlayer2.getText());
+		    		
 		    		Maze root = new Maze();
 		    		root.setupMaze();
-		    		
-//		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
-//		    	
-//		    		
-//		    		Stage stage = (Stage) scene.getScene().getWindow();
-		    		//Scene scene = new Scene();
-//		    		stage.setScene(scene);		
-
-
 		    	}
 		    }
 		    
@@ -154,27 +158,20 @@ public class SelectPlayerScreenController implements Initializable {
 		    	imgViewP2.setOpacity(0.6);
 		    	p2Ready = true;
 		    	
+		    	
+		    	//Both players ready, change screen
 		    	if (p1Ready == true)
 		    	{
-
+		    		//update model
 		    		p.setPlayer1Image(imgViewP1.getImage());
 		    		p.setPlayer2Image(imgViewP2.getImage());
+		    		
+
+		    		p.setPlayer1Name(namePlayer1.getText());
+		    		p.setPlayer2Name(namePlayer2.getText());
 
 		    		Maze root = new Maze();
 		    		root.setupMaze();
-		    		
-		    		
-//		    		Scene scene = new Scene(root);
-		    		
-
-		    		
-		    		
-//		    		Parent newParent = FXMLLoader.load(getClass().getResource("/application/view/MazeScreen.fxml"));
-//		    		Stage stage = (Stage) scene.getScene().getWindow();
-//		    		Scene scene = new Scene(newParent);
-//		    		stage.setScene(scene);		
-
-
 		    	}
 		    }
 	}

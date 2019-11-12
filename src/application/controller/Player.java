@@ -35,22 +35,9 @@ public class Player extends Circle
 		this.x =10; 
 		this.y =10; 
 		
-//		String path = "./img/Superman.png"; // relative path
-		
-		
-//	    Image image = null;
-//		try {
-//			image = new Image(new FileInputStream(path));
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} 
-////		
 		Players p = new Players();
-//		image = p.getPlayer1Image();
 
 		ImagePattern imageView = new ImagePattern(p.getPlayer1Image());   
-        
         this.setFill(imageView);
         
         

@@ -7,8 +7,6 @@ import java.util.ResourceBundle;
 
 
 import application.controller.Cell;
-import application.controller.Player;
-import application.controller.Player2;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
@@ -185,73 +183,7 @@ public abstract class MazeScreenController implements Initializable {
 	        
 	        mazegrid[player.getX()][player.getY()].setCenter(player);
 	        mazegrid[player2.getX()][player2.getY()].setCenter(player2);
-	        
-//	                pane.setOnMouseReleased(e -> {
-//	                    
-//	                    pane.getChildren().add(Anims.getAtoms(1));
-//	                    
-//	                   
-//	                 
-//	                });
-//	               
-	    			
-	    			
-	                /*BorderPane border = new BorderPane();
-	                BorderPane border1 = new BorderPane();
-	                BorderPane border2 = new BorderPane();
-	                BorderPane border3 = new BorderPane();
-	                BorderPane border4 = new BorderPane();
-	                BorderPane border5 = new BorderPane();
-	                BorderPane border6 = new BorderPane();
-	                BorderPane border7 = new BorderPane();
-	                BorderPane border8 = new BorderPane();
-	                BorderPane border9 = new BorderPane();
-	                BorderPane border10 = new BorderPane();
-	                border.getStyleClass().add("game-border-color");  	
-	                border1.getStyleClass().add("game-border-color"); 
-	                border2.getStyleClass().add("game-border-color");
-	                border3.getStyleClass().add("game-border-color");
-	                border4.getStyleClass().add("game-border-color");
-	                border5.getStyleClass().add("game-border-color");
-	                border6.getStyleClass().add("game-border-color");
-	                border7.getStyleClass().add("game-border-color");  
-	                border8.getStyleClass().add("game-border-color");
-	                border9.getStyleClass().add("game-border-color"); 
-	                border10.getStyleClass().add("game-border-color");  
-	                grid.add(border, 2,3,3,1);
-	                grid.add(border1, 5,3,4,1);
-	                grid.add(border2, 13,15,5,1);
-	                grid.add(border3, 3,7,1,5);
-	                grid.add(border4, 11,11,1,3);
-	                grid.add(border5, 2,16,4,1);
-	                grid.add(border6, 16,2,1,4);
-	                grid.add(border7, 16,5,3,1);
-	                grid.add(border8, 7,9,3,3);
-	                grid.add(border9, 13,7,1,5);
-	                grid.add(border10, 13,15,2,3);
-	            
-	        		
-	    			
-//	    			grid.addColumn(columnIndex, children);
-//	    			grid.addRow(rowIndex, children);
-	    			
-	    			
-
-
-	                pane.getStyleClass().add("game-grid-cell");
-	          
-//	                if (i == 0) {
-//	                    pane.getStyleClass().add("first-column");
-//	                }
-//	                if (j == 0) {
-//	                    pane.getStyleClass().add("first-row");
-//	                }
-	                grid.add(pane, i, j);
-	                
-	                
-	            }
-	        }*/
-	        
+	               
 	       
 	        mainPane.setCenter(grid);//place the main game inside the center
 	        mainPane.setPadding(new Insets(10, 10, 10, 10));
@@ -386,18 +318,12 @@ public abstract class MazeScreenController implements Initializable {
 		                     st.setToX(0);
 		                     st.setToY(0);
 		                     
-		                     //st.seCycleCount(Timeline.INDEFINITE);
-		                     //st.setAutoReverse(true);
 		                     st.play();
 		                     el1.setFill(Color.GRAY);
 		                     el1.setStroke(Color.YELLOW);
 		                     mainPane.getChildren().addAll(el1);
-		                	// mazegrid[player2.getX()][player2.getY()].setClip(el1);
 		                	 mazegrid[player2.getX()][player2.getY()].setBottom(el1);
 		                	 
-		                	 //el1.setCenterY(this.player.getCenterY());
-		                	// el1.setCenterX(100);
-		                	// el1.setCenterY(100);
 		                	 
 		             
 	            	 break;
@@ -412,20 +338,14 @@ public abstract class MazeScreenController implements Initializable {
 	                 st1.setFromY(10);
 	                 st1.setToX(0);
 	                 st1.setToY(0);
-	                 
-	                 //st.seCycleCount(Timeline.INDEFINITE);
-	                 //st.setAutoReverse(true);
+	            
 	                 st1.play();
 	                 el2.setFill(Color.RED);
 	                 el2.setStroke(Color.BLUE);
 	                 mainPane.getChildren().addAll(el2);
-	            	// mazegrid[player2.getX()][player2.getY()].setClip(el1);
+
 	            	 mazegrid[player.getX()][player.getY()].setCenter(el2);
-	            	 
-	            	 
-	            	 //el1.setCenterY(this.player.getCenterY());
-	            	// el1.setCenterX(100);
-	            	// el1.setCenterY(100);
+	            	
 		                       
 	            	 
 	             case G:
@@ -439,8 +359,6 @@ public abstract class MazeScreenController implements Initializable {
 	                         new FadeTransition(Duration.millis(4000), rectParallel);
 	                     fadeTransition.setFromValue(1.0f);
 	                     fadeTransition.setToValue(0f);
-	                     //fadeTransition.setCycleCount(50);
-	                     //fadeTransition.setAutoReverse(true);
 	                     
 	                 TranslateTransition translateTransition =
 	                         new TranslateTransition(Duration.millis(3000), rectParallel);
@@ -463,7 +381,6 @@ public abstract class MazeScreenController implements Initializable {
 	                             
 	                     );
 	                     
-	                     //parallelTransition.setCycleCount(Timeline.INDEFINITE);
 	                     parallelTransition.play();
 	                 
 	                     mainPane.getChildren().add(rectParallel);
