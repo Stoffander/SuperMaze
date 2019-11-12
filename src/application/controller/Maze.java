@@ -378,7 +378,7 @@ public class Maze extends Stage {
 						}
 
 						if (Playerlife1 == 0) {
-							lifeP1.setTextFill(Color.RED);
+							nameP1.setTextFill(Color.RED);
 							player2.setVisible(false);
 							nameP1.setText("GAME OVER");
 
