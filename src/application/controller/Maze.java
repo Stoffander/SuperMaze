@@ -1,8 +1,10 @@
 package application.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 
 import application.controller.Cell;
+import application.model.Players;
 import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
@@ -26,6 +28,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
@@ -49,33 +53,46 @@ import javafx.util.Duration;
 
 public class Maze extends Stage {
 
-	BorderPane mainPane = new BorderPane();
-	HBox hBox = new HBox();
-	Label labelP1 = new Label("BATMAN LIFE: 100");
-	Label labelP2 = new Label("SUPERMAN LIFE: 100");
 
+	//import values from model
+	Players p = new Players();
 	
+	String player1Name = p.getPlayer1Name();
+	String player2Name = p.getPlayer2Name();
+	
+	// create circle/movement properties
+
 	double increment = 25.0;
 
 	double Rwidth = 80;
 	double Rheight = 20;
 
-	Player player = new Player();// superman
-	Player2 player2 = new Player2();// batman
+	// create player and objects
+	Player2 player = new Player2();// superman
+	Player player2 = new Player();// batman
+
 	int Playerlife1 = 100;
 	int Playerlife2 = 100;
-
-	// Rectangle r1 = new Rectangle(0, 100, Rwidth, Rheight);//Rectangle(int x, int
-	// y, int width, int height)
 	private Cell[][] mazegrid = new Cell[21][21];
+	
+	BorderPane mainPane = new BorderPane();
+	HBox hBox = new HBox();
+	HBox hBoxLife = new HBox();
+	
+	String Playerlife1S = Integer.toString(Playerlife1);
+	String Playerlife2S = Integer.toString(Playerlife2);
+	
+	Label nameP1 = new Label(player1Name);
+	Label lifeP1 = new Label(Playerlife1S);
+	Label nameP2 = new Label(player1Name);
+	Label lifeP2 = new Label(Playerlife2S);
 
 	
 //    public void start(final Stage stage) throws Exception {
 	public void setupMaze() {
 		int rows = 21;
 		int columns = 21;
-
-		// r1.setTranslateY(155);
+		
 		this.setTitle("Enjoy your game");
 
 		GridPane grid = new GridPane();
@@ -180,10 +197,11 @@ public class Maze extends Stage {
 		
 		mainPane.setTop(hBox);
 	 
-
-	    
-		hBox.getChildren().addAll(labelP1, labelP2);
+		nameP1.setText(player1Name + Playerlife1S);
+		nameP2.setText(player2Name + Playerlife2S);
+		hBox.getChildren().addAll(nameP2, nameP1);
 		hBox.setSpacing(500);
+
 
 		Scene scene = new Scene(mainPane, Color.WHITE);
 
@@ -310,14 +328,14 @@ public class Maze extends Stage {
 
 						if (Playerlife2 > 0) {
 							Playerlife2 = Playerlife2 - 10;
-							String PlayerlifeS = Integer.toString(Playerlife2);
-							labelP2.setText("SUPERMAN LIFE:" + PlayerlifeS);
+							String Playerlife2S = Integer.toString(Playerlife2);
+							nameP2.setText(player2Name + Playerlife2S);
 
 						}
 
 						if (Playerlife2 == 0) {
-							labelP2.setTextFill(Color.RED);
-							labelP2.setText("GAME OVER");
+							lifeP2.setTextFill(Color.RED);
+							lifeP2.setText("GAME OVER");
 							player.setVisible(false);
 							System.out.println("oasd");
 						}
@@ -354,15 +372,15 @@ public class Maze extends Stage {
 
 						if (Playerlife1 > 0) {
 							Playerlife1 = Playerlife1 - 10;
-							String PlayerlifeS2 = Integer.toString(Playerlife1);
-							labelP1.setText("BATMAN LIFE:" + PlayerlifeS2);
+							String Playerlife1S = Integer.toString(Playerlife1);
+							nameP1.setText(player1Name + Playerlife1S);
 
 						}
 
 						if (Playerlife1 == 0) {
-							labelP1.setTextFill(Color.RED);
+							nameP1.setTextFill(Color.RED);
 							player2.setVisible(false);
-							labelP1.setText("GAME OVER");
+							nameP1.setText("GAME OVER");
 
 						}
 
