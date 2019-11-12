@@ -5,12 +5,10 @@ import javafx.scene.layout.BorderPane;
 public class Cell extends BorderPane
 {
 	boolean wall = false;
-	boolean monster = false;
-	
-	public Cell(boolean wall, boolean monster)
+
+	public Cell(boolean wall)
 	{
 		this.wall = wall;
-		this.monster = monster;
 		
 		if(wall)
 		{
@@ -25,8 +23,7 @@ public class Cell extends BorderPane
 	public Cell()
 	{
 		this.wall = false;
-		this.monster = false;
-		
+
 		if(wall)
 		{
 			this.getStyleClass().add("game-border-color"); 
